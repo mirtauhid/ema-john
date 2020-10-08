@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config()
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.swu9d.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ey4wq.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 
 const app = express()
@@ -22,7 +22,7 @@ client.connect(err => {
     console.log(err);
   const productsCollection = client.db("ema-john-store").collection("products");
   const ordersCollection = client.db("ema-john-store").collection("orders");
-  console.log("db connected");
+  
   
     app.post('/addProduct', (req, res) => {
         const products = req.body;
