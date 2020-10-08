@@ -7,7 +7,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:5000/product/'+ productKey)
+        fetch('https://quiet-scrubland-75151.herokuapp.com/product/'+ productKey)
         .then(res => res.json())
         .then(data => setProduct(data));
     }, [productKey])
