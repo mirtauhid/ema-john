@@ -19,7 +19,7 @@ app.get("/test", function (request, response, next) {
     response.set("Content-Type", "text/html; charset=UTF-8");
 })
 
-const port = 5000;
+const port = 8000;
 
 app.get('/', function (req, res, next) {
     res.send("Hello world");
