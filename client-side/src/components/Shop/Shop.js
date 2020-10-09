@@ -6,15 +6,16 @@ import Cart from '../Cart/Cart';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
 import { Link } from 'react-router-dom';
 
-const Shop = () => {
+const Shop = (props) => {
+    let search = props.search;
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
 
     useEffect(()=>{
-        fetch('https://quiet-scrubland-75151.herokuapp.com/products')
+        fetch('https://quiet-scrubland-75151.herokuapp.com/products?search='+search)
         .then(res => res.json())
         .then(data => setProducts(data))
-    }, [])
+    }, [search])
     
     useEffect(()=>{
         const savedCart = getDatabaseCart();

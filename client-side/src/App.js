@@ -21,11 +21,17 @@ export const UserContext = createContext();
 
 function App(props) {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [search, setSearch] = useState('');
+
+  const searchHandler = (queryValue) => {
+    setSearch(queryValue);
+  }
+
   return (
     <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
       <h3>email: {loggedInUser.email}</h3>
       <Router>
-        <Header></Header>
+        <Header searchHandler={searchHandler} ></Header>
         <Switch>
           <Route path="/shop">
             <Shop></Shop>
@@ -43,7 +49,7 @@ function App(props) {
             <Shipment></Shipment>
           </PrivateRoute>
           <Route exact path="/">
-            <Shop></Shop>
+            <Shop search={search} ></Shop>
           </Route>
           <Route path="/product/:productKey">
             <ProductDetail></ProductDetail>
