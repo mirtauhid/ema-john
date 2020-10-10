@@ -41,10 +41,10 @@ const SimpleCardForm = ({handlePayment}) => {
   };
 
   return (
-    <div>
+    <div style={{marginLeft: '20px', border: '1px solid lightgray', padding: '10px'}}>
         <form onSubmit={handleSubmit}>
             <CardElement />
-            <button type="submit" disabled={!stripe}>
+            <button style={{marginTop: '10px'}} type="submit" disabled={!stripe}>
                 Pay
             </button>
         </form>

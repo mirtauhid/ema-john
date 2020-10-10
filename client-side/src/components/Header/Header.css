@@ -1,20 +1,42 @@
 .header img{
-    height: 80px;
+    height: 50px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 19px;
 }
 .header{
     text-align: center;
+    background: black;
+    height: 120px;
+    margin-bottom: 20px;
 }
 .header nav{
-    background-color: black;
+    background-color: #151e29;
     line-height: 40px;
     font-size: 20px;
+    width: 100%;
+}
+.header input{
+    width: 550px;
+    height: 40px;
+    float: left;
+    margin-top: 15px;
+    border-radius: 7px;
+    padding-left: 10px;
 }
 nav a{
     text-decoration: none;
     color: white;
     margin-right: 20px;
     padding: 5px;
+    margin-bottom: 3px;
+    border: 1px solid transparent;
+    border-radius: 2px;
 }
 nav a:hover{
-    background-color: gray;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px;
 }
